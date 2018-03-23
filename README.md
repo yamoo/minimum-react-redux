@@ -83,7 +83,7 @@ npm init
 Install dev dependencies:
 
 ```
-npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react webpack webpack-cli webpack-dev-server
+npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react css-loader style-loader webpack webpack-cli webpack-dev-server
 ```
 
 Install dependencies:
@@ -101,7 +101,7 @@ After the installation is complete, you can find additional folder named `node_m
   ...
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "nodemon --watch ./webpack.config.js -e webpack-dev-server",
     "build": "rm -rf ./dist && webpack && cp ./src/index.html ./dist"
   },
   ...

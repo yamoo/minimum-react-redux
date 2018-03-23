@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './styles.css';
 
 const Todo = ({ value, onRemove }) => (
-  <div>
+  <div className={styles.self}>
     <span>{value}</span>
-    <button onClick={onRemove}>Remove</button>
+    <button className={styles.button} onClick={onRemove}>Remove</button>
   </div>
 );
 

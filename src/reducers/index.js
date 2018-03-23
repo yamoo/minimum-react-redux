@@ -30,13 +30,7 @@ export default (state = initialState, action) => {
         todos: removeItemById(state.todos, action.payload.id)
       };
     }
-    case types.UPDATE_TODO: {
-      return {
-        seqId: state.seqId,
-        newTodo: state.newTodo,
-        todos: updateItemById(state.todos, action.payload.id, action.payload.value)
-      };
-    }
+
     default: {
       return state;
     }

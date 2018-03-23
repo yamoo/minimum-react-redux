@@ -1,0 +1,20 @@
+:local(.self) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 10px 0 ;
+}
+
+:local(.input-field) {
+  display: block;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 6px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+:local(.button) {
+  composes: button from '../components.css';
+}
