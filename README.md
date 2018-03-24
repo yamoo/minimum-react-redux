@@ -1,5 +1,30 @@
 # Minimum React-Redux
 
+## Technology stack
+
+### Editors
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Atom](https://atom.io/)
+
+### Development tools
+- [Git](https://git-scm.com/)
+- [Homebrew](https://brew.sh/)
+- [Nodebrew](https://github.com/hokaccha/nodebrew)
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+
+### Languages
+- [EcmaScript 6](https://ja.wikipedia.org/wiki/ECMAScript)
+- [JSX](https://reactjs.org/docs/introducing-jsx.html)
+
+### Build tools
+- [Babel](https://babeljs.io/)
+- [Webpack](https://webpack.js.org/)
+
+### JS Libraries
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+
 ## Environment preparation
 
 ### Show hidden files
@@ -28,7 +53,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 ### Install Nodebrew
 
-(https://github.com/hokaccha/nodebrew)[nodebrew] is useful to install and manage multiple versions of node.js within the same environment.
+[nodebrew](https://github.com/hokaccha/nodebrew) is useful to install and manage multiple versions of node.js within the same environment.
 
 Install `nodebrew` by using homebrew:
 
@@ -58,16 +83,26 @@ Check installed version:
 
 ```
 $ nodebrew ls
-vx.x.x
+v8.10.0
 
 ```
 
 Use installed version:
 
 ```
-$ nodebrew use vx.x.x
+$ nodebrew use v8.10.0
 $ node -v
-vx.x.x
+v8.10.0
+```
+
+## Repository preparation
+
+### Clone training repository
+
+Download the training repository from Github
+
+```
+git clone git@github.com:yamoo/minimum-react-redux.git
 ```
 
 ### Initialze node package
@@ -83,9 +118,9 @@ npm init
 Install dev dependencies:
 
 ```
-npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react css-loader style-loader webpack webpack-cli webpack-dev-server
+npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react css-loader style-loader webpack webpack-cli webpack-dev-server uglifyjs-webpack-plugin
 ```
-
+ 
 Install dependencies:
 
 ```
@@ -101,7 +136,7 @@ After the installation is complete, you can find additional folder named `node_m
   ...
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --watch ./webpack.config.js -e webpack-dev-server",
+    "start": "webpack-dev-server",
     "build": "rm -rf ./dist && webpack && cp ./src/index.html ./dist"
   },
   ...
@@ -114,3 +149,23 @@ Those files are necesary to run webpack:
 
 - [.babelrc](.babelrc)
 - [webpack.confing.js](webpack.config.js)
+
+## Folder structure
+
+```
+.
+├── .babelrc
+├── .gitignore
+├── README.md
+├── node_modules
+├── package-lock.json
+├── package.json
+├── src
+│   ├── actions
+│   ├── components
+│   ├── containers
+│   ├── helpers
+│   ├── index.html
+│   └── reducers
+└── webpack.config.js
+```

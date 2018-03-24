@@ -1,4 +1,5 @@
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = function(env) {
   return {
@@ -43,6 +44,10 @@ module.exports = function(env) {
         }
       ]
     },
+
+    plugins: [
+      new UglifyJsPlugin()
+    ],
 
     devServer: {
       contentBase: __dirname + '/src',
